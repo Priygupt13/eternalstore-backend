@@ -58,61 +58,61 @@ Resources:
             Cors:
               AllowMethods: "'POST'"
               AllowOrigin: "'*'"
-              AllowHeaders: "'*'"
+              AllowHeaders: "'x-access-token'"
         SignInEvent:
           Type: Api
           Properties:
             Path: /api/auth/signin
             Method: post
             Cors:
-              AllowMethods: "'POST'"
+              AllowMethods: "'OPTIONS,POST'"
               AllowOrigin: "'*'"
-              AllowHeaders: "'*'"
+              AllowHeaders: "'x-access-token'"
         FileCreateEvent:
           Type: Api
           Properties:
             Path: /api/file/create
             Method: post
             Cors:
-              AllowMethods: "'POST'"
+              AllowMethods: "'OPTIONS,POST'"
               AllowOrigin: "'*'"
-              AllowHeaders: "'*'"
+              AllowHeaders: "'x-access-token'"
         FileUpdateEvent:
           Type: Api
           Properties:
             Path: /api/file/update/{id}
             Method: post
             Cors:
-              AllowMethods: "'POST'"
+              AllowMethods: "'OPTIONS,POST'"
               AllowOrigin: "'*'"
-              AllowHeaders: "'*'"
+              AllowHeaders: "'x-access-token'"
         FileDeleteEvent:
           Type: Api
           Properties:
             Path: /api/file/{id}
             Method: delete
             Cors:
-              AllowMethods: "'DELETE'"
+              AllowMethods: "'OPTIONS,DELETE'"
               AllowOrigin: "'*'"
-              AllowHeaders: "'*'"
+              AllowHeaders: "'x-access-token'"
         FileListEvent:
           Type: Api
           Properties:
             Path: /api/file/list
             Method: get
             Cors:
-              AllowMethods: "'GET'"
+              AllowMethods: "'OPTIONS,GET'"
               AllowOrigin: "'*'"
-              AllowHeaders: "'*'"
+              AllowHeaders: "'x-access-token'"
         FileListAdminEvent:
           Type: Api
           Properties:
             Path: /api/file/admin/list
             Method: get
             Cors:
-              AllowMethods: "'GET'"
+              AllowMethods: "'OPTIONS,GET'"
               AllowOrigin: "'*'"
-              AllowHeaders: "'*'"
+              AllowHeaders: "'x-access-token'"
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
