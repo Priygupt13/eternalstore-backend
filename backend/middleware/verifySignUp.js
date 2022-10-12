@@ -23,10 +23,10 @@ checkSignupValidation = (req, res, next) => {
   next();
 }
 
-checkEmailExisted = (req, res, next) => {
+checkEmailExisted = async (req, res, next) => {
     console.log("Verifying if user email exist.");
     // Username
-    User.findOne({
+    await User.findOne({
       where: { email: req.body.email }
     }).then( user => {
         if (user) {
@@ -34,7 +34,8 @@ checkEmailExisted = (req, res, next) => {
           return;
         }
         next();
-    });
+    }).catch(error => res.status(400).send({error: "Failed " + error}));
+    return;
 };
 
 checkRolesExisted = (req, res, next) => {
