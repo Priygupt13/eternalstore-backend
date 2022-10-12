@@ -14,6 +14,15 @@ Parameters:
     Type: String
     Description: The name for a project pipeline stage, such as Staging or Prod, for which resources are provisioned and deployed.
     Default: ''
+  RdsHostParam:
+    Type: Aws::SSM::Parameter::Value<String>
+    Default: 'RDS_DB_HOST'
+  RdsUserParam:
+    Type: Aws::SSM::Parameter::Value<String>
+    Default: 'RDS_DB_USER'
+  RdsPassParam:
+    Type: Aws::SSM::Parameter::Value<String>
+    Default: 'RDS_DB_PASS'
 
 Globals:
   Function:
@@ -33,6 +42,9 @@ Resources:
       Environment:
         Variables:
           NODE_ENV: production
+          AWS_DB_HOST: !Ref RdsHostParam
+          AWS_DB_USER: !Ref RdsUserParam
+          AWS_DB_PASSWORD: !Ref RdsPassParam
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
@@ -87,4 +99,5 @@ Resources:
       Path: /
       ManagedPolicyArns:
         - !Sub 'arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole'
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonSSMReadOnlyAccess'
       PermissionsBoundary: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:policy/CodeStar_${ProjectId}_PermissionsBoundary'
