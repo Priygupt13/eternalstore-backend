@@ -56,12 +56,12 @@ Resources:
         FileUpdateEvent:
           Type: Api
           Properties:
-            Path: /api/file/update/<id>
+            Path: /api/file/update/{id}
             Method: post
         FileDeleteEvent:
           Type: Api
           Properties:
-            Path: /api/file/<id>
+            Path: /api/file/{id}
             Method: delete
         FileListEvent:
           Type: Api
