@@ -33,10 +33,7 @@ Resources:
       Environment:
         Variables:
           NODE_ENV: production
-      Role:
-        Fn::GetAtt:
-        - LambdaExecutionRole
-        - Arn
+      Role: !Sub 'arn:aws:iam::${AWS::AccountId}:role/lambda-vpc-role'
       Events:
         SignUpEvent:
           Type: Api
