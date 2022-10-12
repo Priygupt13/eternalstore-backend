@@ -43,8 +43,8 @@ Resources:
         Variables:
           NODE_ENV: production
           AWS_DB_HOST: 'eternalstore-db.cxpw2nff1ckc.us-west-1.rds.amazonaws.com'
-          AWS_DB_USER: !Ref RdsUserParam
-          AWS_DB_PASSWORD: !Ref RdsPassParam
+          AWS_DB_USER: '{{resolve:ssm:RDS_DB_USER:1}}'
+          AWS_DB_PASSWORD: '{{resolve:ssm:RDS_DB_PASS:1}}'
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
