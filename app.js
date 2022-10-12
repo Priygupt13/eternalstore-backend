@@ -23,7 +23,7 @@ class Server {
           console.log('Drop and Resync Database with { force: true }');
           this.initialize_db();
       });*/
-      db.sequelize.sync();
+      // db.sequelize.sync();
 
       this.middlewares();
       this.routes();
@@ -33,7 +33,6 @@ class Server {
       this.app.use(cors(this.corsOptions));
       this.app.use(express.json());
       this.app.use(express.urlencoded({ extended: true }))
-      this.app.use(express.static(this.frontend_dir));
   }
 
   routes() {
