@@ -33,7 +33,10 @@ Resources:
       Environment:
         Variables:
           NODE_ENV: production
-      Role: !Sub 'arn:aws:iam::${AWS::AccountId}:role/lambda-vpc-role'
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
       Events:
         SignUpEvent:
           Type: Api
@@ -83,5 +86,5 @@ Resources:
           Action: sts:AssumeRole
       Path: /
       ManagedPolicyArns:
-        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole'
       PermissionsBoundary: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:policy/CodeStar_${ProjectId}_PermissionsBoundary'
