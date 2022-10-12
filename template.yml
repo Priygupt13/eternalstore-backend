@@ -55,36 +55,64 @@ Resources:
           Properties:
             Path: /api/auth/signup
             Method: post
+            Cors:
+              AllowMethods: "'POST'"
+              AllowOrigin: "'*'"
+              AllowHeaders: "'*'"
         SignInEvent:
           Type: Api
           Properties:
             Path: /api/auth/signin
             Method: post
+            Cors:
+              AllowMethods: "'POST'"
+              AllowOrigin: "'*'"
+              AllowHeaders: "'*'"
         FileCreateEvent:
           Type: Api
           Properties:
             Path: /api/file/create
             Method: post
+            Cors:
+              AllowMethods: "'POST'"
+              AllowOrigin: "'*'"
+              AllowHeaders: "'*'"
         FileUpdateEvent:
           Type: Api
           Properties:
             Path: /api/file/update/{id}
             Method: post
+            Cors:
+              AllowMethods: "'POST'"
+              AllowOrigin: "'*'"
+              AllowHeaders: "'*'"
         FileDeleteEvent:
           Type: Api
           Properties:
             Path: /api/file/{id}
             Method: delete
+            Cors:
+              AllowMethods: "'DELETE'"
+              AllowOrigin: "'*'"
+              AllowHeaders: "'*'"
         FileListEvent:
           Type: Api
           Properties:
             Path: /api/file/list
             Method: get
+            Cors:
+              AllowMethods: "'GET'"
+              AllowOrigin: "'*'"
+              AllowHeaders: "'*'"
         FileListAdminEvent:
           Type: Api
           Properties:
             Path: /api/file/admin/list
             Method: get
+            Cors:
+              AllowMethods: "'GET'"
+              AllowOrigin: "'*'"
+              AllowHeaders: "'*'"
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
