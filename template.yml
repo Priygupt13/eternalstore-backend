@@ -42,7 +42,7 @@ Resources:
           Type: Api
           Properties:
             Path: /api/auth/signup
-            Method: get
+            Method: post
         SignInEvent:
           Type: Api
           Properties:
