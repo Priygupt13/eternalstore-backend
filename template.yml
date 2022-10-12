@@ -48,6 +48,31 @@ Resources:
           Properties:
             Path: /api/auth/signin
             Method: post
+        FileCreateEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/create
+            Method: post
+        FileUpdateEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/update/<id>
+            Method: post
+        FileDeleteEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/<id>
+            Method: delete
+        FileListEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/list
+            Method: get
+        FileListAdminEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/admin/list
+            Method: get
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role

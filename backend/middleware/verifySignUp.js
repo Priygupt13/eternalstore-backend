@@ -14,6 +14,7 @@ signupValidationRules = () => {
 }
 
 checkSignupValidation = (req, res, next) => {
+  console.log("Verifying signup params.");
   const errors = validationResult(req);
   if(!errors.isEmpty()){
     res.status(400).send({ error: errors.array() });
@@ -23,6 +24,7 @@ checkSignupValidation = (req, res, next) => {
 }
 
 checkEmailExisted = (req, res, next) => {
+    console.log("Verifying if user email exist.");
     // Username
     User.findOne({
       where: { email: req.body.email }
@@ -36,6 +38,7 @@ checkEmailExisted = (req, res, next) => {
 };
 
 checkRolesExisted = (req, res, next) => {
+  console.log("Verifying if user roles exist.");
   if (req.body.roles) {
     for (let i = 0; i < req.body.roles.length; i++) {
       if (!ROLES.includes(req.body.roles[i])) {
