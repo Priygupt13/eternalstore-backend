@@ -11,6 +11,7 @@ var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
   var _id = uuid.v4();
+  console.log("Signup controller called.");
   // Save User to Database
   // verifySignUp middleware would ensure that no same user/email already exists
   User.create({
@@ -21,6 +22,7 @@ exports.signup = (req, res) => {
     password: bcrypt.hashSync(req.body.password, 8)
   })
     .then(user => {
+      console.log("Signup succeeded.");
       if (req.body.roles) {
         Role.findAll({
           where: {
@@ -41,6 +43,7 @@ exports.signup = (req, res) => {
       }
     })
     .catch(err => {
+      console.log("Signup failed." + err.message);
       res.status(500).send({ error: err.message });
     });
 };
