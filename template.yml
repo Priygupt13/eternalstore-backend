@@ -42,7 +42,7 @@ Resources:
       Environment:
         Variables:
           NODE_ENV: production
-          AWS_DB_HOST: !Ref RdsHostParam
+          AWS_DB_HOST: 'eternalstore-db.cxpw2nff1ckc.us-west-1.rds.amazonaws.com'
           AWS_DB_USER: !Ref RdsUserParam
           AWS_DB_PASSWORD: !Ref RdsPassParam
       Role:
