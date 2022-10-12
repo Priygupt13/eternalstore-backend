@@ -55,64 +55,71 @@ Resources:
           Properties:
             Path: /api/auth/signup
             Method: post
-            Cors:
-              AllowMethods: "'POST'"
-              AllowOrigin: "'*'"
-              AllowHeaders: "'x-access-token'"
         SignInEvent:
           Type: Api
           Properties:
             Path: /api/auth/signin
             Method: post
-            Cors:
-              AllowMethods: "'OPTIONS,POST'"
-              AllowOrigin: "'*'"
-              AllowHeaders: "'x-access-token'"
         FileCreateEvent:
           Type: Api
           Properties:
             Path: /api/file/create
             Method: post
-            Cors:
-              AllowMethods: "'OPTIONS,POST'"
-              AllowOrigin: "'*'"
-              AllowHeaders: "'x-access-token'"
         FileUpdateEvent:
           Type: Api
           Properties:
             Path: /api/file/update/{id}
             Method: post
-            Cors:
-              AllowMethods: "'OPTIONS,POST'"
-              AllowOrigin: "'*'"
-              AllowHeaders: "'x-access-token'"
         FileDeleteEvent:
           Type: Api
           Properties:
             Path: /api/file/{id}
             Method: delete
-            Cors:
-              AllowMethods: "'OPTIONS,DELETE'"
-              AllowOrigin: "'*'"
-              AllowHeaders: "'x-access-token'"
         FileListEvent:
           Type: Api
           Properties:
             Path: /api/file/list
             Method: get
-            Cors:
-              AllowMethods: "'OPTIONS,GET'"
-              AllowOrigin: "'*'"
-              AllowHeaders: "'x-access-token'"
         FileListAdminEvent:
           Type: Api
           Properties:
             Path: /api/file/admin/list
             Method: get
-            Cors:
-              AllowMethods: "'OPTIONS,GET'"
-              AllowOrigin: "'*'"
-              AllowHeaders: "'x-access-token'"
+        SignUpOptionEvent:
+          Type: Api
+          Properties:
+            Path: /api/auth/signup
+            Method: options
+        SignInOptionEvent:
+          Type: Api
+          Properties:
+            Path: /api/auth/signin
+            Method: options
+        FileCreateOptionEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/create
+            Method: options
+        FileUpdateOptionEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/update/{id}
+            Method: options
+        FileDeleteOptionEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/{id}
+            Method: options
+        FileListOptionEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/list
+            Method: options
+        FileListAdminOptionEvent:
+          Type: Api
+          Properties:
+            Path: /api/file/admin/list
+            Method: options
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
