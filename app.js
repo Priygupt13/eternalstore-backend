@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 
 let current_env = process.env.NODE_ENV || "local";
-let db_host = process.env.AWS_DB_HOST || "localhost"l
+let db_host = process.env.AWS_DB_HOST || "localhost";
 
 app.get('/', function(req, res) {
   res.send({
