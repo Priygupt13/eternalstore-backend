@@ -27,7 +27,7 @@ Resources:
   HelloWorld:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub '${ProjectId}-lambda'
+      FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-HelloWorld'
       Handler: index.handler
       Runtime: nodejs12.x
       Environment:
