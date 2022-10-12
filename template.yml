@@ -38,15 +38,15 @@ Resources:
         - LambdaExecutionRole
         - Arn
       Events:
-        GetEvent:
+        SignUpEvent:
           Type: Api
           Properties:
-            Path: /
-            Method: get
-        PostEvent:
+            Path: /api/auth/signup
+            Method: post
+        SignInEvent:
           Type: Api
           Properties:
-            Path: /
+            Path: /api/auth/signin
             Method: post
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
