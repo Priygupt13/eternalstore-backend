@@ -16,13 +16,13 @@ Parameters:
     Default: ''
   RdsHostParam:
     Type: Aws::SSM::Parameter::Value<String>
-    Default: 'RDS_DB_HOST'
+    Default: RDS_DB_HOST
   RdsUserParam:
     Type: Aws::SSM::Parameter::Value<String>
-    Default: 'RDS_DB_USER'
+    Default: RDS_DB_USER
   RdsPassParam:
     Type: Aws::SSM::Parameter::Value<String>
-    Default: 'RDS_DB_PASS'
+    Default: RDS_DB_PASS
 
 Globals:
   Function:
@@ -42,9 +42,9 @@ Resources:
       Environment:
         Variables:
           NODE_ENV: production
-          AWS_DB_HOST: '{{resolve:ssm:RDS_DB_HOST:1}}'
-          AWS_DB_USER: '{{resolve:ssm:RDS_DB_USER:1}}'
-          AWS_DB_PASSWORD: '{{resolve:ssm:RDS_DB_PASS:1}}'
+          AWS_DB_HOST: !Ref RDS_DB_HOST
+          AWS_DB_USER: !Ref RDS_DB_USER
+          AWS_DB_PASSWORD: !Ref RDS_DB_PASS
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
