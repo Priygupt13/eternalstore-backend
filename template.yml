@@ -42,9 +42,9 @@ Resources:
       Environment:
         Variables:
           NODE_ENV: production
-          AWS_DB_HOST: !Ref RDS_DB_HOST
-          AWS_DB_USER: !Ref RDS_DB_USER
-          AWS_DB_PASSWORD: !Ref RDS_DB_PASS
+          AWS_DB_HOST: !Ref RdsHostParam
+          AWS_DB_USER: !Ref RdsUserParam
+          AWS_DB_PASSWORD: !Ref RdsPassParam
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
