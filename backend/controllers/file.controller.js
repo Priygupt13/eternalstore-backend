@@ -1,10 +1,15 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const uuid = require("uuid");
 const { deleteLocalFile } = require("../util/file.local")
 const uploadFile = require("../middleware/localUpload");
+const { uploadFileToS3 } = require("../middleware/file.s3");
 const db = require("../models");
 const File = db.file;
 const User = db.user;
 
+const shouldUseS3 = process.env.NODE_ENV && process.env.NODE_ENV == "production";
 
 const  getFileUpdateTimestamp = (item) => {
     return Math.floor(
@@ -62,7 +67,14 @@ exports.createFile = async (req, res) => {
 
     try {
         // Upload the file
-        await uploadFile(req, res);
+        if(shouldUseS3){
+            console.log("Uploading a file to S3.");
+            await uploadFileToS3(req, res);
+        }else{
+            console.log("Uploading a file locally.");
+            await uploadFile(req, res);
+        }
+        
     
         if (req.file == undefined) {
           return res.status(400).send({ error: "Please upload a file!" });
@@ -82,7 +94,7 @@ exports.createFile = async (req, res) => {
                 return res.status(500).send({ error: "File size cannot be larger than 10MB!" });
             }
             
-            res.status(500).send({error: `Could not upload the file: ${req.file.originalname}. ${err}`});
+            res.status(500).send({error: `Could not upload the file: ${err}`});
       }
 };
 
@@ -128,7 +140,7 @@ exports.updateFile = async (req, res) => {
         }
     
         res.status(500).send({
-          message: `Could not upload the file: ${req.file.originalname}. ${err}`,
+          message: `Could not upload the file: ${err}`,
         });
       }
 };
