@@ -118,7 +118,13 @@ exports.updateFile = async (req, res) => {
     // Update file.
     try {
         // Upload the file
-        await uploadFile(req, res);
+        if(shouldUseS3){
+            console.log("Uploading a file to S3.");
+            await uploadFileToS3(req, res);
+        }else{
+            console.log("Uploading a file locally.");
+            await uploadFile(req, res);
+        }
     
         if (req.file == undefined) {
           return res.status(400).send({ error: "Please upload a file!" });
