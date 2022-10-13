@@ -4,7 +4,7 @@ dotenv.config();
 const uuid = require("uuid");
 const { deleteLocalFile } = require("../util/file.local")
 const uploadFile = require("../middleware/localUpload");
-const { uploadFileToS3 } = require("../middleware/file.s3");
+const { uploadFileToS3, deleteFileFromS3 } = require("../middleware/file.s3");
 const db = require("../models");
 const File = db.file;
 const User = db.user;
@@ -156,9 +156,15 @@ exports.deleteFile = (req, res) => {
                 throw "File doesn't exist.";
             }
             const fileUrl = result.url;
-            deleteLocalFile(fileUrl);
+            if(shouldUseS3){
+                console.log("deleting file from S3.");
+                return deleteFileFromS3(fileUrl);
+            }else{
+                console.log("deleting local file.");
+                deleteLocalFile(fileUrl);
+            }
     }).then(
-        File.destroy({where: {id: fileId}})
+        result => File.destroy({where: {id: fileId}})
     ).then(
         result => res.status(200).send("File deleted successfully.")
     ).catch(
