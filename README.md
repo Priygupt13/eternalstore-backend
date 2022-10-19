@@ -4,29 +4,16 @@ Welcome to the AWS CodeStar sample web service
 This sample code helps get you started with a simple Express web service
 deployed by AWS CloudFormation to AWS Lambda and Amazon API Gateway.
 
-What's Here
------------
 
-This sample includes:
+CMPE 281: cloudProject-1 EternalStore
+University Name: http://www.sjsu.edu/
+Course: Cloud Technologies
+Professor: Sanjay Garje
+Student: Priya Gupta
 
-* README.md - this file
-* buildspec.yml - this file is used by AWS CodeBuild to package your
-  service for deployment to AWS Lambda
-* app.js - this file contains the sample Node.js code for the web service
-* index.js - this file contains the AWS Lambda handler code
-* template.yml - this file contains the AWS Serverless Application Model (AWS SAM) used
-  by AWS CloudFormation to deploy your service to AWS Lambda and Amazon API
-  Gateway.
-* tests/ - this directory contains unit tests for your application
-* template-configuration.json - this file contains the project ARN with placeholders used for tagging resources with the project ID
 * Video Link for the above Project of Cloud Technologies : 
   https://www.youtube.com/watch?v=W6ClQ-oc-S8&t=169s
-  
-  Prof Sanjay Garje 
-  Course : Cloud Technologies(Individual Project)
-  Student: Priya Gupta
-  
-
+    
 Getting Started
 ---------------
 
