@@ -19,8 +19,12 @@ This sample includes:
   Gateway.
 * tests/ - this directory contains unit tests for your application
 * template-configuration.json - this file contains the project ARN with placeholders used for tagging resources with the project ID
-* Video Link for the above Project of Cloud Technologies : Prof Sanjay Garje 
+* Video Link for the above Project of Cloud Technologies : 
   https://www.youtube.com/watch?v=W6ClQ-oc-S8&t=169s
+  
+  Prof Sanjay Garje 
+  Course : Cloud Technologies(Individual Project)
+  Student: Priya Gupta
   
 
 Getting Started
