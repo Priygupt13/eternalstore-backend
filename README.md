@@ -5,6 +5,8 @@ CMPE 281: CloudProject-1 EternalStore
 3. Professor: Sanjay Garje
 4. Student: Priya Gupta
 
+Project Documentation : Project1_CloudAssignment-1.pdf
+
 * Video Link for the above Project of Cloud Technologies : 
   https://www.youtube.com/watch?v=W6ClQ-oc-S8&t=169s
 
