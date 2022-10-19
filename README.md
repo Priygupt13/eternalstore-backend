@@ -1,3 +1,14 @@
+
+CMPE 281: CloudProject-1 EternalStore
+1. University Name: http://www.sjsu.edu/
+2. Course: Cloud Technologies
+3. Professor: Sanjay Garje
+4. Student: Priya Gupta
+
+* Video Link for the above Project of Cloud Technologies : 
+  https://www.youtube.com/watch?v=W6ClQ-oc-S8&t=169s
+
+
 Welcome to the AWS CodeStar sample web service
 ==============================================
 
@@ -5,14 +16,6 @@ This sample code helps get you started with a simple Express web service
 deployed by AWS CloudFormation to AWS Lambda and Amazon API Gateway.
 
 
-CMPE 281: cloudProject-1 EternalStore
-University Name: http://www.sjsu.edu/
-Course: Cloud Technologies
-Professor: Sanjay Garje
-Student: Priya Gupta
-
-* Video Link for the above Project of Cloud Technologies : 
-  https://www.youtube.com/watch?v=W6ClQ-oc-S8&t=169s
     
 Getting Started
 ---------------
