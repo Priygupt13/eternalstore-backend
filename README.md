@@ -1,9 +1,13 @@
 
+This web application is powered by AWS CodeStar and developed as part of CMPE-281 Project assignment leveraging AWS Cloud services, deployed by AWS CloudFormation to AWS Elastic Bean Stalk and Amazon API Gateway.
+
 CMPE 281: CloudProject-1 EternalStore
-1. University Name: http://www.sjsu.edu/
-2. Course: Cloud Technologies
+
+1. University: San Jose State University
+2. Course: Cloud Technologies (CMPE-281)
 3. Professor: Sanjay Garje
 4. Student: Priya Gupta
+5. Major: Masters in Software Engineering
 
 Project Documentation : Project1_CloudAssignment-1.pdf
 
