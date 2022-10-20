@@ -15,6 +15,25 @@ Project Documentation : Project1_CloudAssignment-1.pdf
   https://www.youtube.com/watch?v=W6ClQ-oc-S8&t=169s
 
 
+Tech Stack Used in this Project
+1. Client: Embedded JavaScript, Bootstrap, CSS, HTML5, React
+
+2. Server: Node, Express
+
+3. Libraries: aws-sdk, aws-s3
+
+4. Database: AWS RDA
+
+5. AWS Cloud Services: AWS S3, Elastic Bean Stalk, CloudFront, CloudWatch, EC2, Elastic Load Balancer, Auto Scaling Group, Lambda, Multi AZ,AWS SNS, Route53, Code Star, Lambda, Api Gateway
+
+Featues of Project
+1. High Availability
+2. CloudFront Distribution
+3. Auto Scaling
+4. Multi Regional AZs
+
+
+
 Welcome to the AWS CodeStar sample web service
 ==============================================
 
