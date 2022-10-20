@@ -1,5 +1,5 @@
 
-This web application is powered by AWS CodeStar and developed as part of CMPE-281 Project assignment leveraging AWS Cloud services, deployed by AWS CloudFormation to AWS Elastic Bean Stalk and Amazon API Gateway.
+This web application is created by using AWS CodeStar and developed as part of CMPE-281 Project assignment leveraging AWS Cloud services, deployed by AWS CloudFormation to AWS Elastic Bean Stalk and Amazon API Gateway.
 
 CMPE 281: CloudProject-1 EternalStore
 
